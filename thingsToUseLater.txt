@@ -1,0 +1,11 @@
+<% if(!currentUser){ %>
+					<div> 
+						<a href='/login'>Login</a>
+						<a href='/register'>Sign-Up</a>
+					</div>
+				<% } else { %>
+					<div>
+						<span>Signed in as: <%= currentUser.username %></span>
+						<span><a href="/logout">Logout</a></span>
+					</div>
+				<% } %>
