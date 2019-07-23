@@ -9,3 +9,22 @@
 						<span><a href="/logout">Logout</a></span>
 					</div>
 				<% } %>
+                
+<i class="fas fa-bars fa-2x"></i>
+
+<a href="#" class="logo">The ${Coding} Stoic</a>
+
+:root{
+	--bronze: #946b2d;
+	--blue: #0e1a40;
+	--silver: #838383;
+	--philosopher: 'philosopher', sans-serif;
+	--cinzel: 'Cinzel Decorative', cursive;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}

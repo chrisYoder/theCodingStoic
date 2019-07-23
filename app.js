@@ -9,7 +9,7 @@ const express 			= require('express'),
 // MONGOOSE CONGIF
 // ***************
 
-const url = 'mongodb://localhost:27017/codingStoicBlog';
+const url = 'mongodb+srv://theCodingStoic:martin9338@cluster0-xa4o6.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(url, { 
 	useNewUrlParser: true,
 	useCreateIndex: true
@@ -29,9 +29,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(expressSanitizer());
 
+// ****************
+// Requiring Routes
+// ****************
+
+const newPost = require('./routes/newPost');
+
 app.get('/', (req, res) => {
-	res.render('./posts');
+	res.render('posts');
 });
+
+
+
+app.get('/posts/new', (req, res) => {
+	res.render('new');
+});
+
+
 
 app.listen(3000, process.env.IP, () => {
 	console.log('Server is running');

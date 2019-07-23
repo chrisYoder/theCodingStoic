@@ -21,14 +21,16 @@
   "homepage": "https://github.com/chrisYoder/theCodingStoic#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "diff": "^3.5.0",
+    "editor.md": "^1.5.0",
     "ejs": "^2.6.1",
     "express": "^4.17.0",
     "express-sanitizer": "^1.0.5",
     "method-override": "^3.0.0",
+    "mongodb": "^3.2.7",
     "mongoose": "^5.5.11",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1",
-    "semantic-ui": "^2.4.2"
+    "passport-local-mongoose": "^5.0.1"
   }
 }

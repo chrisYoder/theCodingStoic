@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema({
 	text: String,
 	createdAt: { 
-		type: data, 
+		type: Date, 
 		default: Date.now
 	}, 
 	author: {

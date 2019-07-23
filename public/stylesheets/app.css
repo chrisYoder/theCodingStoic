@@ -1,0 +1,333 @@
+/* This will be the final page that is served to the browser */
+
+/*	
+	**************
+   	Global Styles
+   	**************
+*/
+
+:root{
+	--bronze: #946b2d;
+	--blue: #0e1a40;
+	--silver: #838383;
+	--philosopher: 'philosopher', sans-serif;
+	--cinzel: 'Cinzel Decorative', cursive;
+}
+
+
+
+body, html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; 
+}
+
+.philosopher {
+	font-family: var(--philosopher);
+	color: var(--blue);
+}
+/* 
+	**************
+  	Mobile display
+   	**************
+*/
+
+    /* 
+		***********
+		Mobile Grid
+		***********
+    */
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3 1fr);
+	grid-template-rows: 55px auto auto;
+	grid-template-areas: 	'nav nav nav '
+							'. quote . '
+							'body body body ';
+}
+
+/* Navigation Bar */
+.nav {
+	grid-area: nav;
+	background-color: var(--blue);
+	color: var(--bronze);
+	display: grid;
+	grid-template-columns: repeat(3 1fr);
+	grid-template-rows: 55px 34px;
+	grid-template-areas: 	'logo . burger'
+							'links links links';
+}
+
+.nav__logo {
+	font-family: var(--cinzel);
+	font-size: 21px;
+	font-weight: 600;
+	padding-left: 5px;	
+	grid-area: logo;	
+	display: grid;
+	justify-items: start;
+	align-items: center;
+}
+
+.nav__burger-menu {
+	grid-area: burger;
+	display: grid;
+	align-items: center;
+	justify-items: end;
+	padding-right: 5px;
+	
+}
+
+.nav__menu {
+	background-color: var(--bronze);	
+	grid-area: links;
+	font-family: var(--cinzel);
+	font-weight: 600;
+	display: grid;
+	grid-template-columns: repeat(4 1fr);
+	grid-template-rows: 34px;
+	grid-template-areas: 'home new register logStatus';
+	align-items: center;
+	justify-items: center;
+	grid-gap: 1em;
+	
+	
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.reveal {
+	transition: visibility 1.5s ease-in-out;
+}
+
+.nav__menu__item {
+	color: var(--blue);
+	text-decoration: none;
+}
+
+	/* Quote Section Grid */
+
+
+.quote {
+	grid-area: quote;
+	margin-top: 55px;
+	font-family: var(--philosopher);
+	background-color: var(--silver);
+	color: var(--blue);
+	border-radius: 8px ;
+	box-shadow: 3px 3px 5px var(--bronze);
+	padding: 8px;
+	font-size: 21px;
+	display: grid;
+	align-items: center;
+	grid-template-columns:   1fr ;
+	grid-template-rows: auto ;
+	grid-template-areas: 	'  text '
+							'  author  ';
+}
+
+.quote__text {
+	grid-area: text;	
+	display: grid;
+	font-style: italic;
+	justify-items: center;
+	
+}
+
+.quote__author {
+	grid-area: author;	
+	font-size: 13px;
+	padding-right:55px;
+	display: grid;
+	justify-items: end;
+	
+	
+}
+	
+
+
+/* 
+
+	****************
+	New Post Display
+	****************
+*/
+
+.newPost {
+	grid-area: body;
+	display: grid;
+	grid-template-columns: 34px 1fr 34px;
+	grid-template-rows: auto;
+	grid-template-areas: 	'. heading  . '
+							'. form  .';
+	
+	
+	grid-gap: 1em;
+}
+
+.heading {
+	grid-area: heading;
+	justify-items: center;
+}
+
+.form {
+	grid-area: form;
+	border: 1px solid var(--blue);
+	border-radius: 5px;
+	padding: 13px;
+	box-shadow: 2px 2px 5px var(--blue);
+	display: grid;
+	grid-gap: .5em;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		'title'
+		'image'
+		'editor'
+		'submit ';
+	
+}
+
+.title {
+	grid-area: title;
+	display: grid;
+	grid-template-columns: 55px 1fr;
+	grid-template-rows: 34px;
+	grid-template-areas: 'labelTitle fieldTitle';
+	align-items: center;
+}	
+
+.label__title {
+	grid-area: labelTitle;
+	display: grid;
+	justify-self: center;
+}
+
+.field_title {
+	grid-area: fieldTitle;
+	
+	border-radius: 5px;
+}
+
+.image {
+	grid-area: image;
+	display: grid;
+	grid-template-columns: 55px 1fr;
+	grid-template-rows: 34px;
+	grid-template-areas: 'labelImage fieldImage';
+	align-items: center;
+}
+	
+.label__image {
+	grid-area: labelImage;
+	display: grid;
+	
+}
+	
+	.field__image {
+		grid-area: fieldImage;
+		
+	}
+
+input[type=text] {
+	border-radius: 5px; 
+	border: 1px solid var(--blue);
+	padding: 5px;
+}
+.editorField {
+	grid-area: editor;
+	
+}
+	
+
+.submitBtn{
+	grid-area: submit;
+	background-color: var(--blue);
+	font-family: var(--philosopher);
+	color: var(--bronze);
+	display: grid;
+	justify-items: center;
+	justify-self: center;
+	width: 50%;
+	height: 34px;
+	font-size: 21px;
+	align-items: center;
+	border-radius: 5px;
+	box-shadow: none;
+}
+
+.editor {
+	grid-area: editor;
+}
+
+#editor {
+	
+	font-family: var(--philosopher);
+	font-size: 18px;
+	height: 377px;
+	
+}
+
+
+
+
+/*  
+	*************
+	Large Display
+	*************
+*/ 
+
+@media only screen and (min-width: 940px) {
+	/*Grid*/
+	
+	/* 	Navigation Grid */
+	.nav {
+		grid-area: nav;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: 55px;
+		grid-template-areas: 'logo links';
+	}
+	
+	.nav__logo {
+		grid-area: logo;
+	}
+	
+	.nav__menu {
+		visibility: visible;
+		background-color: var(--blue);
+		grid-area: links;
+		grid-template-columns: repeat(4 1fr);
+		grid-template-rows: 55px;
+		grid-template-areas: 'home new login register';
+	}
+	
+	.home {
+		grid-area: home;
+	}
+	
+	.new {
+		grid-area: new;
+	}
+	
+	.login {
+		grid-area: login;
+	}
+	
+	.register {
+		grid-area: register;
+	}
+	/*Styles*/
+	
+	/* 	Navigation Styles */
+	.nav__burger-menu{
+		display: none;
+	}
+	
+	.nav__menu__item{
+		color: var(--bronze);
+	}
+}
